@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+
+}
+@font-face {
+  font-family: 'ArcadeClassic';
+  src: url('./assets/ARCADECLASSIC.TTF') format('truetype');
+}
+
+a{
+  text-decoration: none;
+}

@@ -1,0 +1,10 @@
+.footer{
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    z-index: 10;
+    height: fit-content;
+}

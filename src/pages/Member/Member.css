@@ -1,0 +1,93 @@
+.member {
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.member h1 {
+    font-size: 2rem;
+    font-family: "Chakra Petch", sans-serif;
+    color: #fff;
+    animation: fadeIn 1s ease-in-out both;
+}
+
+.member-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    background: linear-gradient(40deg, rgba(34, 67, 195, 0.15) 0%, rgba(170, 48, 223, 0.15) 100%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease-in-out both;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.member-details:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.member-details img {
+    border-radius: 10px;
+    width: auto;
+    max-width: 80%;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    animation: fadeIn 1.5s ease-in-out both;
+    transition: transform 0.3s ease-in-out;
+}
+
+.member-details p {
+    font-size: 1rem;
+    font-family: "Chakra Petch", sans-serif;
+    color: #fff;
+    margin: 10px 0;
+    animation: fadeIn 2s ease-in-out both;
+    width: 95%;
+    word-wrap: break-word;
+}
+
+.member-details span {
+    display: flex;
+    margin-top: 10px;
+    animation: fadeIn 2.5s ease-in-out both;
+}
+
+.member-details a {
+    font-size: 1rem;
+    font-family: "Chakra Petch", sans-serif;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.member-details a:hover {
+    color: #ddd;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

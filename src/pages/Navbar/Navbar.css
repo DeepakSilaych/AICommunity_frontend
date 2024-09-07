@@ -1,0 +1,138 @@
+.navbar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+    /* gap:1rem; */
+    /* padding: 1rem; */
+    z-index: 4;
+    position: relative;
+}
+
+.navbar_heading{
+    display:flex;
+    width: 55%;
+    justify-content: center;
+    align-items: center;
+    padding:1rem;
+    /* position: absolute; */
+    height: 148px;
+    /* top:10vh;
+    right: 28vw;
+    left:25vw; */
+    background-image: url(../../assets/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    font-family: ArcadeClassic;
+    border-radius: 10px;
+    font-size: 5rem;
+    color: #fff;
+}
+.navbar__links{
+    /* top:10vh;
+    right: 15vw; */
+    display: flex;
+    flex-direction: column;    
+    padding: 1rem 2rem;
+    color: #000;
+    /* position: absolute; */
+    height : auto;
+    width: 15%;
+    z-index: 4;
+    background-image: url(../../assets/background.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    font-family: ArcadeClassic;
+    border-radius: 10px;
+}@media screen and (max-width: 550px){
+    .navbar_logo{
+        display: none;
+    }
+}
+.navbar__link{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 0.4rem;
+    transition: all 0.3s ease;
+}
+
+.navbar .active{
+    color: #000;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.navbar__link:hover{
+    color: #000;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.navbar_logo{
+    z-index: 6;
+}
+.logo_img{
+    width: 120px;
+    height: 100px; 
+}
+.navbar_logo_container{
+    height: 180px;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute; */
+    /* top: 10vh;
+    left: 15vw; */
+    z-index: 5;
+    border-radius: 10px;
+}
+.navbar-toggle{
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.menu_logo{
+    width: 50px;
+    height: 50px;
+    display: none;
+}
+
+@media(max-width:1420px){
+    .navbar_heading{
+        display: none;
+    }
+}
+
+@media (max-width: 550px){
+
+    .menu_logo{
+        display: block;
+        /* position: absolute; */
+        top:1rem;
+        left: 1rem;
+    }
+    .navbar__links{
+        display: none;
+        /* margin: 10px; */
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 73.5vw;
+        /* left:10vw;
+        right: 10vw; */
+        text-align: center;
+        /* position: absolute; */
+        /* top: 80px;
+        left: 0; */
+    }
+    .navbar__links.open{
+        display: flex;
+    }
+    .navbar__link:hover{
+        color: #000;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    
+}
