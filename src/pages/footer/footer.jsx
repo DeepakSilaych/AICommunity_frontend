@@ -10,7 +10,7 @@ function Footer() {
     <span>Contact Info<br/>
           Feel free to reach out to us!<br/>
           Email: aicommunity.iitb@gmail.com<br/>
-          Contact: +91 8769740232<br/>
+          Contact: +91-9993193578<br/>
           <div>
             <Link to="https://www.instagram.com/ai.community_iitb/">
               <Instagram className='inline hover:stroke-purple-500 mr-2'/>
