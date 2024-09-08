@@ -4,18 +4,18 @@ import { useParams } from 'react-router-dom';
 import './Member.css';
 import { Linkedin, Github } from 'lucide-react';
 
+
 function Member() {
     const { id } = useParams();
     const [member, setMember] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/member/${id}`)
+        axios.get(`https://itc.gymkhana.iitb.ac.in/aicb/member/${id}`)
             .then((response) => {
                 setMember(response.data);
             })
             .catch((error) => {
                 console.log(error);
-                alert("Failed to fetch Member Details");
             });
     }, [id]);
 
@@ -27,7 +27,7 @@ function Member() {
         <div className='member'>
             <h1>{member.name}</h1>
             <div className='member-details'>
-                <img src={"http://localhost:8000/" + member.pic} alt={member.name} />
+                <img src={"https://itc.gymkhana.iitb.ac.in/aicb/" + member.pic} alt={member.name} />
                 <p><strong>Position:</strong> {member.position === '1' ? 'Founder' : member.position === '2' ? 'Manager' : member.position === '3' && 'Convener'}</p>
                 <p><strong>Department:</strong> {member.department}</p>
                 <p><strong>Email:</strong> {member.email}</p>

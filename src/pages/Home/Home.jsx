@@ -85,10 +85,10 @@ export default function Home() {
                     </div>
             </div>
 
-            <div className="w-full h-auto rounded-lg flex flex-col bg-opacity-50 p-8 justify-center mb-8">
+            {/* <div className="w-full h-auto rounded-lg flex flex-col bg-opacity-50 p-8 justify-center mb-8">
                 <h1 className="font-pressStart text-xl mb-2 text-green-500 underline flex justify-between align-text-bottom">Events</h1>
                 <div className="text-white text-2xl font-sans">Clash of T-AI-TANS hackathon</div>
-            </div>
+            </div> */}
 
 
             {/* <div className="md:w-full w-[100vw] h-auto rounded-lg flex flex-col bg-opacity-50 pr-4 md:p-8 justify-center mb-8">

@@ -2,6 +2,8 @@ import React , {useEffect, useState} from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from '../../assets/logo.png';
 import {FaBars} from 'react-icons/fa';
+import { apiUrl, baseUrl } from '../../config';
+
 
 export default function Navbar() {
   const [isOpen , setIsOpen] = useState(false);
@@ -50,8 +52,7 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-          <Link to="http://127.0.0.1:8000/admin">Login</Link>
-
+          <Link to={apiUrl + 'admin'} className="text-white">Login</Link>
         </div>
       </div>
     </div>
