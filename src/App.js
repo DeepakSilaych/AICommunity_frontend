@@ -1,8 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, BrowserRouter, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import Home from './pages/Home/Home.jsx';
 import Blog from './pages/blogsHome/blog.jsx';
 import Layout from './pages/Layout/Layout.jsx';
@@ -104,9 +103,9 @@ function App() {
 
 function RootApp() {
   return (
-    <BrowserRouter>
+    <Router>
       <App />
-    </BrowserRouter>
+    </Router>
   );
 }
 
