@@ -26,7 +26,7 @@ function ProjectReport() {
             <img
                 src={baseUrl + project.img.split('/').slice(-1)[0]}
                 alt='project'
-                className='w-full h-auto'
+                className='w-80 h-48 object-cover rounded-lg'
             />
         }
             <h1 className='text-2xl font-bold'>{project.title}</h1>

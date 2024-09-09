@@ -26,7 +26,7 @@ function Project() {
                             <img
                                 src={baseUrl + project.img.split('/').slice(-1)[0]}
                                 alt={project.name}
-                                className='w-full h-28'
+                                className='w-full h-48 object-cover rounded-lg'
                             />
                             <div className="text-white p-4 rounded-lg flex flex-col gap-4" key={project.name}>
                                 <span className='flex flex-col w-full'>

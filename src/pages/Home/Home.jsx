@@ -1,4 +1,3 @@
-import React from "react";
 import img1 from "../../assets/img1.jpg";
 import img2 from "../../assets/img2.jpeg";
 import img3 from "../../assets/img3.jpg";
@@ -8,9 +7,29 @@ import image from "../../assets/image.png";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from 'react-type-animation';
 
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { apiUrl, baseUrl } from '../../config';
+
+
+
 
 
 export default function Home() {
+    const [galleryImages, setGalleryImages] = useState([]);
+
+    
+    useEffect(() => {
+        axios.get(`${apiUrl}gallery/`)
+        .then((response) => {
+            setGalleryImages(response.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }, []);
+
+
     return (
         <div className="h-full flex flex-col bg-black">
             <div className="w-full m-8" >
@@ -85,187 +104,6 @@ export default function Home() {
                     </div>
             </div>
 
-            {/* <div className="w-full h-auto rounded-lg flex flex-col bg-opacity-50 p-8 justify-center mb-8">
-                <h1 className="font-pressStart text-xl mb-2 text-green-500 underline flex justify-between align-text-bottom">Events</h1>
-                <div className="text-white text-2xl font-sans">Clash of T-AI-TANS hackathon</div>
-            </div> */}
-
-
-            {/* <div className="md:w-full w-[100vw] h-auto rounded-lg flex flex-col bg-opacity-50 pr-4 md:p-8 justify-center mb-8">
-                <h1 className="font-pressStart text-xl mb-2 text-green-500 underline flex justify-between align-text-bottom">Resources</h1>
-                <div className="text-white text-lg font-sans">
-                <div className="p-8">
-                    <ul className="list-disc ml-6">
-                        <li className="mb-2 underline">
-                        Foundational Concepts
-                        <ul className="list-decimal ml-6">
-                            <li className="mb-1">
-                            Introduction to Artificial Intelligence
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Overview of AI and its history</li>
-                                <li className="mb-1">Key concepts and terminology</li>
-                            </ul>
-                            </li>
-                            <li className="mb-1">
-                            Machine Learning Basics
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Types of machine learning (supervised, unsupervised, reinforcement)</li>
-                                <li className="mb-1">Common algorithms and techniques</li>
-                            </ul>
-                            </li>
-                        </ul>
-                        </li>
-
-                        <li className="mb-2 underline">
-                        Programming and Tools
-                        <ul className="list-decimal ml-6">
-                            <li className="mb-1">
-                            Programming Languages for AI
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Python for AI and machine learning</li>
-                                <li className="mb-1">R and other languages commonly used in AI</li>
-                            </ul>
-                            </li>
-                            <li className="mb-1">
-                            AI Development Tools and Frameworks
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">TensorFlow, PyTorch, and other popular frameworks</li>
-                                <li className="mb-1">Libraries for data manipulation and visualization (e.g., NumPy, Pandas, Matplotlib)</li>
-                            </ul>
-                            </li>
-                        </ul>
-                        </li>
-
-                        <li className="mb-2 underline">
-                        Advanced Topics
-                        <ul className="list-decimal ml-6">
-                            <li className="mb-1">
-                            Deep Learning
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Neural networks and architectures (CNNs, RNNs, LSTMs)</li>
-                                <li className="mb-1">Techniques for training deep models</li>
-                            </ul>
-                            </li>
-                            <li className="mb-1">
-                            Natural Language Processing (NLP)
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Text analysis and processing</li>
-                                <li className="mb-1">Sentiment analysis, language translation, and chatbots</li>
-                            </ul>
-                            </li>
-                            <li className="mb-1">
-                            Computer Vision
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Image recognition and classification</li>
-                                <li className="mb-1">Object detection and image generation</li>
-                            </ul>
-                            </li>
-                        </ul>
-                        </li>
-
-                        <li className="mb-2 underline">
-                        Specialized Areas
-                        <ul className="list-decimal ml-6">
-                            <li className="mb-1">
-                            Reinforcement Learning
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Concepts and applications</li>
-                                <li className="mb-1">Key algorithms (Q-learning, Deep Q-Networks)</li>
-                            </ul>
-                            </li>
-                            <li className="mb-1">
-                            AI in Robotics
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Integration of AI in robotic systems</li>
-                                <li className="mb-1">Applications and challenges in robotics</li>
-                            </ul>
-                            </li>
-                        </ul>
-                        </li>
-
-                        <li className="mb-2 underline">
-                        Practical Applications
-                        <ul className="list-decimal ml-6">
-                            <li className="mb-1">
-                            AI in Healthcare
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Diagnosis, treatment recommendations, and personalized medicine</li>
-                            </ul>
-                            </li>
-                            <li className="mb-1">
-                            AI in Finance
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Algorithmic trading, fraud detection, and risk assessment</li>
-                            </ul>
-                            </li>
-                            <li className="mb-1">
-                            AI in Autonomous Vehicles
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Self-driving technology and its challenges</li>
-                            </ul>
-                            </li>
-                        </ul>
-                        </li>
-
-                        <li className="mb-2 underline">
-                        Ethical and Societal Considerations
-                        <ul className="list-decimal ml-6">
-                            <li className="mb-1">
-                            Ethics in AI
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Fairness, transparency, and accountability in AI systems</li>
-                            </ul>
-                            </li>
-                            <li className="mb-1">
-                            Impact of AI on Society
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">AI’s influence on job markets and privacy concerns</li>
-                            </ul>
-                            </li>
-                        </ul>
-                        </li>
-
-                        <li className="mb-2 underline">
-                        Career and Professional Development
-                        <ul className="list-decimal ml-6">
-                            <li className="mb-1">
-                            Building a Career in AI
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Skills and qualifications needed for AI roles</li>
-                                <li className="mb-1">Career paths and job opportunities</li>
-                            </ul>
-                            </li>
-                            <li className="mb-1">
-                            Networking and Community Building
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Joining AI communities and attending conferences</li>
-                            </ul>
-                            </li>
-                        </ul>
-                        </li>
-
-                        <li className="mb-2 underline">
-                        Tutorials and Courses
-                        <ul className="list-decimal ml-6">
-                            <li className="mb-1">
-                            Online AI Courses
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Recommendations for MOOCs and tutorials</li>
-                            </ul>
-                            </li>
-                            <li className="mb-1">
-                            Hands-on Projects
-                            <ul className="list-circle ml-6">
-                                <li className="mb-1">Project ideas for practical experience</li>
-                            </ul>
-                            </li>
-                        </ul>
-                        </li>
-                    </ul>
-                    </div>
-
-                </div>
-            </div> */}
             <div className="w-full h-auto rounded-lg flex flex-col bg-opacity-50 p-8 justify-center mb-8">
                 <h1 className="font-pressStart text-xl mb-2 text-green-500 underline flex justify-between align-text-bottom">
                     Gallery
@@ -274,9 +112,9 @@ export default function Home() {
                     {galleryImages.map((image, index) => (
                     <img
                         key={index}
-                        src={image.src}
-                        alt={image.alt}
-                        className=" md:w-1/3 md:h-1/3 rounded-lg"
+                        src={baseUrl + image.img.split('/').slice(-1)[0]}
+                        alt='gallery'
+                        className=" w-80 h-48 object-cover rounded-lg"
                     />
                     ))}
                 </div>
@@ -324,8 +162,8 @@ const missionPoints = [
     }
   ];
 
-  const galleryImages = [
-    { src: img1, alt: "img1" },
-    { src: img2, alt: "img2" },
-    { src: img3, alt: "img3" }
-  ];
+//   const galleryImages = [
+//     { src: img1, alt: "img1" },
+//     { src: img2, alt: "img2" },
+//     { src: img3, alt: "img3" }
+//   ];
